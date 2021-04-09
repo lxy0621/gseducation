@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/iconfont.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/jquery.pagination.css">
+    <link rel="stylesheet" href="./css/personal.css">
+    <title>高汕课堂</title>
+</head>
+
+<body>
+    <header>
+        <div class="container_header">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./images/logo.png" alt="">
+                </a>
+            </div>
+            <div class="list">
+                <img src="./images/list.png" alt="">
+                <p>学科导航</p>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="高汕医疗课程">
+                <div class="searchBtn">
+                    <img src="./images/search.png" alt="">
+                </div>
+            </div>
+            <div class="login" id="userInfo">
+                <a href="">
+                    <p>未登录</p>
+                </a>
+            </div>
+            <div class="login_window">
+                <div class="avatar" id="avatarLogin">
+                    <p class="nickname">游客</p>
+                    <p class="hospital"> -- </p>
+                </div>
+                <div class="login_btn" id="login">登 录</div>
+                <div class="sign_btn" id="sign">注 册</div>
+                <div class="out_btn" id="out_">退 出</div>
+                <div class="triangle"></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="personal">
+        <div class="container-personal">
+            <div class="top-message">
+                <div class="top-left">
+                    <div class="avatar">
+                        <img src="./images/avatar.png" alt="">
+                    </div>
+                    <div class="user">
+                        <div class="username">游客</div>
+                        <div class="usernumber">lxy_0621</div>
+                    </div>
+                </div>
+                <div class="top-right">
+                    <div class="title">我的账户：</div>
+                    <div class="right_item">
+                        <div class="item_name">账户余额</div>
+                        <div class="item_data"><span class="money">100</span>元</div>
+                    </div>
+                    <div class="right_item">
+                        <div class="item_name">已获得学分</div>
+                        <div class="item_data"><span class="credit">100</span>元</div>
+                    </div>
+                    <div class="right_item">
+                        <div class="item_name">待付课程</div>
+                        <div class="item_data"><span class="subject">3</span>门</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom_message">
+                <div class="bottom-left">
+                    <div class="list_item active">
+                        <p class="iconfont icon-kecheng1-copy"></p>课程安排
+                    </div>
+                    <div class="list_item">
+                        <p class="iconfont icon-kecheng"></p>我的课程
+                    </div>
+                    <div class="list_item">
+                        <p class="iconfont icon-gerenxinxi"></p>个人信息
+                    </div>
+                    <div class="list_item">
+                        <p class="iconfont icon-zizhi"></p>教师资质认证
+                    </div>
+                    <div class="list_item">
+                        <p class="iconfont icon-xiaoxi"></p>消息
+                    </div>
+                    <div class="list_item">
+                        <p class="iconfont icon-tuichu"></p>注销登录
+                    </div>
+                </div>
+                <div class="bottom-right">
+                    <div class="contrast">课程安排</div>
+                    <div class="contrast">我的课程</div>
+                    <div class="contrast">个人信息</div>
+                    <div class="contrast">教师资质认证</div>
+                    <div class="contrast">消息</div>
+                    <div class="contrast">注销登录</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="top-footer">
+            <div class="top_container"><a href="#">关于我们</a> | <a href="#">郑重声明</a> | <a href="#">帮助中心</a> | 联系电话：
+                0471-3485147 (9:00-18:00) | 邮箱：nmyczx@163.com | 内蒙古高汕医疗科技有限公司</div>
+        </div>
+        <div class="bottom-footer">
+            <div class="bot_container">蒙ICP备19001922号 Copyright ,All Rights Reserved. HTML</div>
+        </div>
+    </div>
+    <!-- absolute -->
+    <div class="lesson_list">
+        <div class="content_list">
+            <div class="list_item"><a href="#"><img src="./images/icon_yx.png" alt="">基础医学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_nk.png" alt="">临床内科学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_wk.png" alt="">临床外科学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_fc.png" alt="">妇产科学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_ek.png" alt="">儿科学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_yeb.png" alt="">眼耳鼻喉学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_kq.png" alt="">口腔医学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_movie.png" alt="">影像医学</a></div>
+
+            <div class="list_item"><a href="#"><img src="./images/icon_jz.png" alt="">急诊学与危重症医学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_jy.png" alt="">医学检验</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_gg.png" alt="">公共卫生与预防医学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_med.png" alt="">药学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_hl.png" alt="">护理学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_jy.png" alt="">医学教育与卫生管理</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_kf.png" alt="">全科医学与康复医学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_jh.png" alt="">中医学/中西医结合医学</a></div>
+
+            <div class="list_item"><a href="#"><img src="./images/icon_ln.png" alt="">老年医学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_sx.png" alt="">输血医学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_lc.png" alt="">临床营养学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_zl.png" alt="">肿瘤医学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_fc.png" alt="">南方医科大学研究生课程班</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_js.png" alt="">精神科</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_ss.png" alt="">手术室</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_yd.png" alt="">运动医科学</a></div>
+        </div>
+    </div>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/jquery.pagination.min.js"></script>
+    <script src="./js/interactive.js"></script>
+    <script>
+        $(document).ready(function () {
+            var userInfo = localStorage.getItem('GS_EDUCATION') || '{}';
+            if (userInfo !== '{}') {
+                userInfo = JSON.parse(userInfo);
+                $('.login_window .nickname').text(userInfo.realname);
+                $('.login_window .hospital').text(userInfo.hospital);
+                $('#userInfo a p').text(userInfo.realname);
+                $('#userInfo a').attr('href','personal.html');
+                $('#login').css('display', 'none');
+                $('#sign').css('display', 'none');
+                $('#out_').css('display', 'block');
+            } else {
+                return;
+            }
+        })
+        $('.bottom-left .list_item').click(function () {
+            var i = $(this).index();
+            $('.bottom-left .list_item').eq(i).addClass('active').siblings().removeClass('active');
+            $('.bottom-right .contrast').eq(i).stop().fadeIn(500).show().siblings().hide();
+        })
+    </script>
+</body>
+
+</html>

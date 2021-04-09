@@ -1,0 +1,242 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #f1f1f1;
+}
+p {
+  margin: 0;
+  font-size: 14px;
+}
+.container-login {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(../images/loginbg.jpg) no-repeat center / cover;
+}
+.container-login .sign {
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 720px;
+  height: 640px;
+  background: #ffffff;
+  padding: 12px 24px;
+  box-sizing: border-box;
+}
+.container-login .sign .logo {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-login .sign .logo img {
+  display: block;
+  width: 160px;
+  height: auto;
+}
+.container-login .sign .form {
+  width: 100%;
+}
+.container-login .sign .form form .form_item {
+  width: 100%;
+  height: 36px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.container-login .sign .form form .form_item p {
+  width: 100px;
+}
+.container-login .sign .form form .form_item input {
+  width: 100%;
+  height: 36px;
+  padding-left: 10px;
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+  outline: none;
+  box-sizing: border-box;
+}
+.container-login .sign .form form .form_item select {
+  width: 100%;
+  height: 36px;
+  padding-left: 10px;
+  border-radius: 4px;
+  border: 1px solid #cccccc;
+  outline: none;
+  box-sizing: border-box;
+}
+.container-login .sign .form form .password {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container-login .sign .form form .password div {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container-login .sign .form form .password div p {
+  width: 85px;
+}
+.container-login .sign .form form .password div input {
+  width: 240px;
+  padding-left: 10px;
+  border: 1px solid #cccccc;
+  outline: none;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.container-login .sign .form form .password div:nth-child(1) input {
+  margin-left: 2px;
+}
+.container-login .sign .form form .password div:nth-child(2) {
+  justify-content: space-between;
+}
+.container-login .sign .form form .province {
+  width: 100%;
+  height: 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container-login .sign .form form .province p {
+  width: 100px;
+}
+.container-login .sign .form form .province .select_list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.container-login .sign .form form .province .select_list #province,
+.container-login .sign .form form .province .select_list #hospital,
+.container-login .sign .form form .province .select_list #department {
+  width: 190px;
+  height: 36px;
+  padding-left: 10px;
+  border: 1px solid #cccccc;
+  outline: none;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.container-login .sign .form form .mobile {
+  width: 100%;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-login .sign .form form .mobile .tel {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container-login .sign .form form .mobile .tel input {
+  margin-left: 15px;
+}
+.container-login .sign .form form .mobile .code {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+.container-login .sign .form form .mobile .code .yzm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.container-login .sign .form form .mobile .code .yzm input {
+  outline: none;
+  border: 1px solid #cccccc;
+  border-radius: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.container-login .sign .form form .mobile .code .yzm .getcode {
+  width: 200px;
+  height: 36px;
+  background: #5cfd8c;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 1s ease 0s;
+  -o-transition: all 1s ease 0s;
+  -moz-transition: all 1s ease 0s;
+  -webkit-transition: all 1s ease 0s;
+}
+.container-login .sign .form form .mobile .code .yzm .disableGet {
+  pointer-events: none;
+  background: #868686;
+}
+.container-login .sign .form form .mobile .code .yzm .getcode:hover {
+  background: #16a8fd;
+}
+.container-login .sign .form form .backtips {
+  width: 100%;
+  height: 24px;
+  text-align: center;
+  line-height: 24px;
+}
+.container-login .sign .form form .submit {
+  width: 100%;
+  height: 42px;
+  color: #ffffff;
+  background: #5ccffd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 1s ease 0s;
+  -o-transition: all 1s ease 0s;
+  -moz-transition: all 1s ease 0s;
+  -webkit-transition: all 1s ease 0s;
+}
+.container-login .sign .form form .submit:hover {
+  background: #16a8fd;
+}
+.container-login .sign .backOrSign {
+  width: 100%;
+  height: 20px;
+  text-align: center;
+  margin-top: 16px;
+  cursor: pointer;
+  color: #979797;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-login .sign .backOrSign .midline {
+  width: 1px;
+  height: 100%;
+  background: #c5c5c5;
+  margin: 0 12px;
+}
+.container-login .sign .backOrSign .goback:hover {
+  color: #16a8fd;
+}
+.container-login .sign .backOrSign .tosign:hover {
+  color: #16a8fd;
+}
+.container-login .sign .word {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  color: #c5c5c5;
+  text-align: center;
+}

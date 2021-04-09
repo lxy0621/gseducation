@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>高汕课堂</title>
+</head>
+
+<body>
+    <header>
+        <div class="container_header">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./images/logo.png" alt="">
+                </a>
+            </div>
+            <div class="list">
+                <img src="./images/list.png" alt="">
+                <p>学科导航</p>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="高汕医疗课程">
+                <div class="searchBtn">
+                    <img src="./images/search.png" alt="">
+                </div>
+            </div>
+            <div class="login" id="userInfo">
+                <a href="">
+                    <p>未登录</p>
+                </a>
+            </div>
+            <div class="login_window">
+                <div class="avatar" id="avatarLogin">
+                    <p class="nickname">游客</p>
+                    <p class="hospital"> -- </p>
+                </div>
+                <div class="login_btn" id="login">登 录</div>
+                <div class="sign_btn" id="sign">注 册</div>
+                <div class="out_btn" id="out">退 出</div>
+                <div class="triangle"></div>
+            </div>
+        </div>
+    </header>
+    <!-- 轮播图 -->
+    <div class="banner">
+        <div class="container">
+            <div class="carousel slide" id="slidershow" data-ride="carousel" data-interval="2000">
+                <!--计数器-->
+                <ol class="carousel-indicators">
+                    <li class="active" data-target="#slidershow" data-slide-to="0"></li>
+                    <li data-target="#slidershow" data-slide-to="1"></li>
+                    <li data-target="#slidershow" data-slide-to="2"></li>
+                </ol>
+                <!--图片容器-->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="images/banner.jpg" />
+                    </div>
+                    <div class="item">
+                        <img src="images/banner2.jpg" />
+                    </div>
+                    <div class="item">
+                        <img src="images/banner3.jpg" />
+                    </div>
+                    <!--轮播导航-->
+                    <a href="#slidershow" data-slide="prev" class="left carousel-control" role="button"></a>
+                    <a href="#slidershow" data-slide="next" class="right carousel-control" role="button"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 在线课程 -->
+    <div class="online">
+        <div class="container-online">
+            <p class="title">在线课程<span><a href="online.html">查看更多<img src="./images/more.png" /></a></span></p>
+            <p class="desc">在线实时学习课程</p>
+            <div class="online_list" id="onlineList"></div>
+        </div>
+    </div>
+    <!-- 离线课程 -->
+    <div class="online">
+        <div class="container-online">
+            <p class="title">离线课程<span><a href="offline.html">查看更多<img src="./images/more.png" /></a></span></p>
+            <p class="desc">线下自主学习课程</p>
+            <div class="online_list" id="offLineList"></div>
+        </div>
+    </div>
+    <!-- 医学资讯 -->
+    <div class="online">
+        <div class="container-online">
+            <p class="title">医学资讯<span><a href="info.html">查看更多<img src="./images/more.png" /></a></span></p>
+            <p class="desc">最前线的医学资讯课程</p>
+            <div class="online_list">
+                <div class="online_item">
+                    <div class="pic">
+                        <img src="./images/online.jpg" alt="">
+                    </div>
+                    <div class="message">
+                        <p class="title">2020年全区医院感染管理质量控制年会暨医院感染管理岗位培训班</p>
+                        <p class="hospital">共 24 节 | 内蒙古医科大学附属医院/感染科</p>
+                        <p class="price">￥10.00<span>3000人购买</span></p>
+                    </div>
+                </div>
+                <div class="online_item">
+                    <div class="pic">
+                        <img src="./images/online.jpg" alt="">
+                    </div>
+                    <div class="message">
+                        <p class="title">2020年全区医院感染管理质量控制年会暨医院感染管理岗位培训班</p>
+                        <p class="hospital">共 24 节 | 内蒙古医科大学附属医院/感染科</p>
+                        <p class="price">￥10.00<span>3000人购买</span></p>
+                    </div>
+                </div>
+                <div class="online_item">
+                    <div class="pic">
+                        <img src="./images/online.jpg" alt="">
+                    </div>
+                    <div class="message">
+                        <p class="title">2020年全区医院感染管理质量控制年会暨医院感染管理岗位培训班</p>
+                        <p class="hospital">共 24 节 | 内蒙古医科大学附属医院/感染科</p>
+                        <p class="price">￥10.00<span>3000人购买</span></p>
+                    </div>
+                </div>
+                <div class="online_item">
+                    <div class="pic">
+                        <img src="./images/online.jpg" alt="">
+                    </div>
+                    <div class="message">
+                        <p class="title">2020年全区医院感染管理质量控制年会暨医院感染管理岗位培训班</p>
+                        <p class="hospital">共 24 节 | 内蒙古医科大学附属医院/感染科</p>
+                        <p class="price">￥10.00<span>3000人购买</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 医学文献 -->
+    <div class="online">
+        <div class="container-online">
+            <p class="title">医学文献<span><a href="./literature.html">查看更多<img src="./images/more.png" /></a></span></p>
+            <p class="desc">最前沿的医学文献资料</p>
+            <div class="online_list">
+                <div class="online_item">
+                    <div class="pic">
+                        <img src="./images/online.jpg" alt="">
+                    </div>
+                    <div class="message">
+                        <p class="title">2020年全区医院感染管理质量控制年会暨医院感染管理岗位培训班</p>
+                        <p class="hospital">共 24 节 | 内蒙古医科大学附属医院/感染科</p>
+                        <p class="price">￥10.00<span>3000人购买</span></p>
+                    </div>
+                </div>
+                <div class="online_item">
+                    <div class="pic">
+                        <img src="./images/online.jpg" alt="">
+                    </div>
+                    <div class="message">
+                        <p class="title">2020年全区医院感染管理质量控制年会暨医院感染管理岗位培训班</p>
+                        <p class="hospital">共 24 节 | 内蒙古医科大学附属医院/感染科</p>
+                        <p class="price">￥10.00<span>3000人购买</span></p>
+                    </div>
+                </div>
+                <div class="online_item">
+                    <div class="pic">
+                        <img src="./images/online.jpg" alt="">
+                    </div>
+                    <div class="message">
+                        <p class="title">2020年全区医院感染管理质量控制年会暨医院感染管理岗位培训班</p>
+                        <p class="hospital">共 24 节 | 内蒙古医科大学附属医院/感染科</p>
+                        <p class="price">￥10.00<span>3000人购买</span></p>
+                    </div>
+                </div>
+                <div class="online_item">
+                    <div class="pic">
+                        <img src="./images/online.jpg" alt="">
+                    </div>
+                    <div class="message">
+                        <p class="title">2020年全区医院感染管理质量控制年会暨医院感染管理岗位培训班</p>
+                        <p class="hospital">共 24 节 | 内蒙古医科大学附属医院/感染科</p>
+                        <p class="price">￥10.00<span>3000人购买</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 继教政策 -->
+    <div class="online">
+        <div class="container-online">
+            <p class="title">继教政策<span><a href="./policy.html">查看更多<img src="./images/more.png" /></a></span></p>
+            <p class="desc">一起学习继教政策</p>
+            <div class="online_list">
+                <div class="online_item">
+                    <div class="pic">
+                        <img src="./images/online.jpg" alt="">
+                    </div>
+                    <div class="message">
+                        <p class="title">2020年全区医院感染管理质量控制年会暨医院感染管理岗位培训班</p>
+                        <p class="hospital">共 24 节 | 内蒙古医科大学附属医院/感染科</p>
+                        <p class="price">￥10.00<span>3000人购买</span></p>
+                    </div>
+                </div>
+                <div class="online_item">
+                    <div class="pic">
+                        <img src="./images/online.jpg" alt="">
+                    </div>
+                    <div class="message">
+                        <p class="title">2020年全区医院感染管理质量控制年会暨医院感染管理岗位培训班</p>
+                        <p class="hospital">共 24 节 | 内蒙古医科大学附属医院/感染科</p>
+                        <p class="price">￥10.00<span>3000人购买</span></p>
+                    </div>
+                </div>
+                <div class="online_item">
+                    <div class="pic">
+                        <img src="./images/online.jpg" alt="">
+                    </div>
+                    <div class="message">
+                        <p class="title">2020年全区医院感染管理质量控制年会暨医院感染管理岗位培训班</p>
+                        <p class="hospital">共 24 节 | 内蒙古医科大学附属医院/感染科</p>
+                        <p class="price">￥10.00<span>3000人购买</span></p>
+                    </div>
+                </div>
+                <div class="online_item">
+                    <div class="pic">
+                        <img src="./images/online.jpg" alt="">
+                    </div>
+                    <div class="message">
+                        <p class="title">2020年全区医院感染管理质量控制年会暨医院感染管理岗位培训班</p>
+                        <p class="hospital">共 24 节 | 内蒙古医科大学附属医院/感染科</p>
+                        <p class="price">￥10.00<span>3000人购买</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="top-footer">
+            <div class="top_container"><a href="#">关于我们</a> | <a href="#">郑重声明</a> | <a href="#">帮助中心</a> | 联系电话：
+                0471-3485147 (9:00-18:00) | 邮箱：nmyczx@163.com | 内蒙古高汕医疗科技有限公司</div>
+        </div>
+        <div class="bottom-footer">
+            <div class="bot_container">蒙ICP备19001922号 Copyright ,All Rights Reserved. HTML</div>
+        </div>
+    </div>
+    <!-- absolute -->
+    <div class="lesson_list">
+        <div class="content_list">
+            <div class="list_item"><a href="#"><img src="./images/icon_yx.png" alt="">基础医学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_nk.png" alt="">临床内科学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_wk.png" alt="">临床外科学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_fc.png" alt="">妇产科学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_ek.png" alt="">儿科学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_yeb.png" alt="">眼耳鼻喉学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_kq.png" alt="">口腔医学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_movie.png" alt="">影像医学</a></div>
+
+            <div class="list_item"><a href="#"><img src="./images/icon_jz.png" alt="">急诊学与危重症医学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_jy.png" alt="">医学检验</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_gg.png" alt="">公共卫生与预防医学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_med.png" alt="">药学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_hl.png" alt="">护理学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_jy.png" alt="">医学教育与卫生管理</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_kf.png" alt="">全科医学与康复医学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_jh.png" alt="">中医学/中西医结合医学</a></div>
+
+            <div class="list_item"><a href="#"><img src="./images/icon_ln.png" alt="">老年医学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_sx.png" alt="">输血医学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_lc.png" alt="">临床营养学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_zl.png" alt="">肿瘤医学</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_fc.png" alt="">南方医科大学研究生课程班</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_js.png" alt="">精神科</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_ss.png" alt="">手术室</a></div>
+            <div class="list_item"><a href="#"><img src="./images/icon_yd.png" alt="">运动医科学</a></div>
+        </div>
+    </div>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/lesson.js"></script>
+    <script src="./js/interactive.js"></script>
+    <script>
+
+        var userInfo = localStorage.getItem('GS_EDUCATION') || '{}';
+
+        $(document).ready(function () {
+
+            if (userInfo !== '{}') {
+                userInfo = JSON.parse(userInfo);
+                $('.login_window .nickname').text(userInfo.realname);
+                $('.login_window .hospital').text(userInfo.hospital);
+                $('#userInfo a p').text(userInfo.realname);
+                $('#userInfo a').attr('href', 'personal.html');
+                $('#login').css('display', 'none');
+                $('#sign').css('display', 'none');
+                $('#out').css('display', 'block');
+            } else {
+                return;
+            }
+            var userid = userInfo.id   //用户id
+            getOnlineLesson('4', '1', '0', '', '1', '', '',''); //获取首页在线课程
+            getOffLineLesson('4', '1', '0', '', '0', '', '',''); //获取首页离线课程
+
+        })
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

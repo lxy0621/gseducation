@@ -1,0 +1,397 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #f1f1f1;
+}
+p {
+  margin: 0;
+  font-size: 14px;
+}
+header {
+  width: 100%;
+  height: 64px;
+  background: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 300;
+}
+header .container_header {
+  position: relative;
+  width: 1200px;
+  height: 64px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .container_header .login_window {
+  position: absolute;
+  width: 240px;
+  height: 208px;
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  top: 64px;
+  right: -80px;
+  z-index: 3000;
+  padding: 20px 12px;
+  box-sizing: border-box;
+  display: none;
+}
+header .container_header .login_window .avatar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+header .container_header .login_window .avatar .nickname {
+  font-size: 18px;
+  font-weight: bold;
+}
+header .container_header .login_window .avatar .hospital {
+  color: #949494;
+  font-size: 12px;
+}
+header .container_header .login_window .login_btn {
+  margin-top: 32px;
+  width: 100%;
+  height: 36px;
+  background: #5ccffd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+header .container_header .login_window .sign_btn {
+  margin-top: 8px;
+  width: 100%;
+  height: 36px;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #888888;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  cursor: pointer;
+}
+header .container_header .login_window .out_btn {
+  margin-top: 70px;
+  width: 100%;
+  height: 36px;
+  background: #e04e34;
+  text-align: center;
+  line-height: 36px;
+  color: #ffffff;
+  border-radius: 6px;
+  cursor: pointer;
+  display: none;
+}
+header .container_header .login_window .triangle {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 0;
+  height: 0;
+  border-width: 0 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent #ffffff;
+}
+header .container_header .logo {
+  flex: 1;
+}
+header .container_header .list {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+header .container_header .list img {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-right: 6px;
+}
+header .container_header .list p {
+  color: #5ccffd;
+  font-weight: bold;
+  line-height: 64px;
+}
+header .container_header .search {
+  flex: 4;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+header .container_header .search input {
+  width: 240px;
+  height: 36px;
+  outline: none;
+  border: 1px solid #5ccffd;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  padding-left: 12px;
+}
+header .container_header .search .searchBtn {
+  width: 36px;
+  height: 36px;
+  background: #5ccffd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  cursor: pointer;
+}
+header .container_header .search .searchBtn img {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+header .container_header .login {
+  flex: 1;
+  height: 100%;
+  height: 64px;
+}
+header .container_header .login a {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+  height: 64px;
+}
+header .container_header .login a img {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+header .container_header .login a p {
+  color: #333333;
+  margin-left: 6px;
+}
+.screen {
+  position: fixed;
+  width: 100%;
+  top: 64px;
+  padding-top: 32px;
+  box-sizing: border-box;
+  background: #ffffff;
+  z-index: 100;
+}
+.screen .screen-container {
+  width: 1200px;
+  margin: 0 auto;
+}
+.screen .screen-container .nav {
+  margin-bottom: 12px;
+}
+.screen .screen-container .nav img {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin: 0 2px;
+}
+.screen .screen-container .nav a {
+  color: #000000;
+}
+.screen .screen-container .ification {
+  width: 100%;
+  border-top: 1px solid #c7c7c7;
+  border-bottom: 1px solid #c7c7c7;
+  padding: 12px 0;
+  box-sizing: border-box;
+  display: flex;
+}
+.screen .screen-container .ification .title {
+  width: 90px;
+}
+.screen .screen-container .ification .lesson_item {
+  width: 100px;
+  text-align: left;
+  cursor: pointer;
+}
+.screen .screen-container .ification .lesson_item:hover {
+  color: #5c94fd;
+}
+.screen .screen-container .spend {
+  width: 100%;
+  padding: 12px 0;
+  box-sizing: border-box;
+  display: flex;
+}
+.screen .screen-container .spend .title {
+  width: 90px;
+}
+.screen .screen-container .spend .spend_item {
+  width: 100px;
+  text-align: left;
+  cursor: pointer;
+}
+.screen .screen-container .spend .spend_item:hover {
+  color: #5c94fd;
+}
+.screen .screen-container .sort {
+  width: 100%;
+  padding: 12px 0;
+  box-sizing: border-box;
+  display: flex;
+  border-top: 1px solid #c7c7c7;
+}
+.screen .screen-container .sort .title {
+  width: 90px;
+}
+.screen .screen-container .sort .sort_item {
+  width: 100px;
+  text-align: left;
+  cursor: pointer;
+}
+.screen .screen-container .sort .sort_item:hover {
+  color: #5c94fd;
+}
+.lesson {
+  min-height: 568px;
+  margin-top: 264px;
+  padding-top: 22px;
+  box-sizing: border-box;
+  z-index: -10;
+}
+.lesson .container-lesson {
+  min-height: 568px;
+  width: 1200px;
+  margin: 0 auto;
+}
+.lesson .container-lesson .online_list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.lesson .container-lesson .online_list .online_item {
+  width: 288px;
+  height: 274px;
+  background: #ffffff;
+}
+.lesson .container-lesson .online_list .online_item .pic {
+  overflow: hidden;
+  width: 100%;
+  height: 150px;
+}
+.lesson .container-lesson .online_list .online_item .pic img {
+  display: block;
+  width: 100%;
+  height: 150px;
+  cursor: pointer;
+  transition: all 0.6s;
+}
+.lesson .container-lesson .online_list .online_item .message {
+  position: relative;
+  padding: 10px 6px;
+  box-sizing: border-box;
+  height: 150px;
+}
+.lesson .container-lesson .online_list .online_item .message .title {
+  position: relative;
+  font-size: 14px;
+  text-align: left;
+  margin: 6px 0 4px 0;
+}
+.lesson .container-lesson .online_list .online_item .message .price {
+  color: #888888;
+  margin: 4px 0;
+}
+.lesson .container-lesson .online_list .online_item .message .price span {
+  color: #fd4242;
+}
+.lesson .container-lesson .online_list .online_item .message .hospital {
+  color: #ffb039;
+}
+.lesson .container-lesson .online_list .online_item:hover img {
+  transform: scale(1.2);
+}
+.footer {
+  width: 100%;
+}
+.footer .top-footer {
+  width: 100%;
+  height: 42px;
+  background: #333333;
+}
+.footer .top-footer .top_container {
+  width: 1200px;
+  margin: 0 auto;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #cccccc;
+}
+.footer .top-footer .top_container a {
+  color: #cccccc;
+  margin: 0 4px;
+}
+.footer .bottom-footer {
+  width: 100%;
+  height: 42px;
+  background: #7c7c7c;
+}
+.footer .bottom-footer .bot_container {
+  width: 1200px;
+  margin: 0 auto;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #cccccc;
+}
+.lesson_list {
+  position: fixed;
+  top: 64px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 100%;
+  height: 280px;
+  background: #ffffff;
+  display: none;
+  z-index: 9999;
+}
+.lesson_list .content_list {
+  padding: 20px 0;
+  box-sizing: border-box;
+  width: 1200px;
+  height: 280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.lesson_list .content_list .list_item {
+  width: 150px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.lesson_list .content_list .list_item a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.lesson_list .content_list .list_item a img {
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 8px;
+}
