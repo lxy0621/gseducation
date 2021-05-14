@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/jquery.pagination.css">
-    <link rel="stylesheet" href="./css/online.css">
+    <link rel="stylesheet" href="./css/news.css">
     <title>高汕课堂</title>
 </head>
 
@@ -48,41 +48,19 @@
         </div>
     </header>
 
-    <!-- 课程 -->
-    <div class="lesson">
-        <!-- 筛选 -->
-        <div class="screen">
-            <div class="screen-container">
-                <div class="nav">
-                    <a href="#" class="goback">返回上级</a>
-                    <img src="./images/next.png" />
-                    <a href="#">在线课程</a>
-                    <img src="./images/next.png" />
-                    <a href="#">全部分类</a>
-                    <img src="./images/next.png" />
-                </div>
-                <div class="sort">
-                    <div class="title">排&ensp;&ensp;&ensp;&ensp;序：</div>
-                    <div class="sort_list">
-                        <div class="sort_item active" id="1">默 认</div>
-                        <div class="sort_item" id="1">正 序</div>
-                        <div class="sort_item" id="0">倒 序</div>
-                    </div>
-                </div>
+    <div class="news">
+        <div class="container-news">
+            <div class="nav">
+                <a href="#" class="goback">返回上级</a>
+                <img src="./images/next.png" />
+                <a href="#">在线课程</a>
+                <img src="./images/next.png" />
+                <a href="#">全部分类</a>
             </div>
-        </div>
-        <div class="container-lesson">
-            <div class="online_list" id="onlineList"></div>
+            <div class="news-content"></div>
         </div>
     </div>
-    <!-- 分页 -->
-    <div class="page">
-        <div class="container-page">
-            <div class="panel-footer text-center">
-                <div id="pagination" class="page"></div>
-            </div>
-        </div>
-    </div>
+
     <div class="footer">
         <div class="top-footer">
             <div class="top_container"><a href="#">关于我们</a> | <a href="#">郑重声明</a> | <a href="#">帮助中心</a> | 联系电话：
@@ -126,21 +104,35 @@
     </div>
     <script src="./js/jquery-3.3.1.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/jquery.pagination.min.js"></script>
     <script src="./js/lesson.js"></script>
+    <script src="./js/jquery.pagination.min.js"></script>
     <script src="./js/interactive.js"></script>
     <script>
 
-        var pagesize = 8;
-        var curpageIndex = 1;
-        var subjectType = '';
-        var free = '';
-        var newsort = '1';
-        var onlineSearch = '';
-
         $(document).ready(function () {
 
-            getOnlineLesson(pagesize, curpageIndex, '0', '', '1', subjectType, free, '', newsort,onlineSearch);
+            function GetRequest() {
+                var url = location.search;
+                var theRequest = new Object();
+                if (url.indexOf("?") != -1) {
+                    var str = url.substr(1);
+                    strs = str.split("&");
+                    for (var i = 0; i < strs.length; i++) {
+                        theRequest[strs[i].split("=")[0]] = decodeURIComponent(strs[i].split("=")[1]);
+                    }
+                }
+                return theRequest;
+            }
+            id = GetRequest().id;   //新闻id
+            value = GetRequest().value;    //课程类型
+            if (value == 'info') {
+                $('#lessonType').text('医学资讯');
+            } else if (value == 'literature') {
+                $('#lessonType').text('医学文献');
+            } else if (value == 'policy') {
+                $('#lessonType').text('继教政策');
+            }
+            getNewsDetail(id);
 
             var userInfo = localStorage.getItem('GS_EDUCATION') || '{}';
             if (userInfo !== '{}') {
@@ -157,24 +149,6 @@
             }
         })
 
-        showPage = function (c, t) {
-            $('#pagination').pagination({
-                currentPage: c,
-                totalPage: t,
-                callback: function (current) {
-                    curpageindex = current;
-                    getOnlineLesson(pagesize, curpageindex, '0', '', '1', subjectType, free, '', newsort,onlineSearch);
-                }
-            })
-        };
-        showPage();
-
-        $('.sort_list').on('click', '.sort_item', function (e) {
-            var i = $(this).index();
-            $('.sort_item').eq(i).addClass('active').siblings().removeClass('active');
-            newsort = e.currentTarget.id;
-            getOnlineLesson(pagesize, curpageIndex, '0', '', '1', subjectType, free, '',newsort,onlineSearch);
-        })
 
         $('.goback').click(function () {
             history.go(-1)

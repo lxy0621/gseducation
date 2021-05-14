@@ -7,8 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/jigsaw.css">
     <link rel="stylesheet" href="./css/login.css">
     <title>高汕课堂</title>
+    <style>
+        #captcha {
+            position: absolute;
+            top: 148px;
+            margin-top: 155px;
+            z-index: 0;
+        }
+
+        .pic_canvas {
+            display: none;
+        }
+
+        .block {
+            display: none;
+        }
+
+        .refreshIcon {
+            display: none;
+        }
+
+        #msg {
+            width: 100%;
+            line-height: 40px;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -26,6 +54,8 @@
                     <img src="./images/pswd.png" alt="">
                     <input type="password" name="password" placeholder="请输入密码">
                 </div>
+                <div id="captcha"></div>
+                <div id="msg"></div>
                 <div class="tips"></div>
                 <div class="enter" id="enter">登 录</div>
                 <div class="backOrSign"><span class="goback">回到首页</span><span class="midline"></span><span
@@ -37,14 +67,27 @@
 
     <script src="./js/jquery-3.3.1.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/jigsaw.js"></script>
     <script src="./js/register.js"></script>
     <script src="./js/interactive.js"></script>
     <script>
+
+        var validation = false;
+
+        jigsaw.init(document.getElementById('captcha'), function () {
+            validation = true;
+            $('.operation .tips').text('验证成功').css('color', '#42c068');
+        })
         $('.enter').click(function () {
             var username = $('.operation .number input[name=number]').val();
             var password = $('.operation .password input[name=password]').val();
-            userLogin(username, password);
+            if (validation == false) {
+                $('.operation .tips').text('请进行登录验证').css('color', '#e04e34');
+            } else {
+                userLogin(username, password);
+            }
         })
+
         $('.backOrSign .goback').click(function () {
             url = "index.html";
             window.location.href = url;

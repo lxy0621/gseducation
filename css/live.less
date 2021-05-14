@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0f0f1e;
+    margin: 0;
+    padding: 0;
+
+    .header {
+        width: 100%;
+        height: 80px;
+        background: #272750;
+
+        .container-header {
+            width: 1200px;
+            height: 80px;
+            margin: 0 auto;
+            padding: 16px 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            img {
+                display: block;
+                height: 48px;
+                width: auto;
+            }
+
+            .operation {
+                width: 520px;
+                height: 80px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: #ffffff;
+
+                .SignIn {
+                    width: 146px;
+                    height: 42px;
+                    border-radius: 24px;
+                    background: #ff7373;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: all 1s ease 0s;
+                    -o-transition: all 1s ease 0s;
+                    -moz-transition: all 1s ease 0s;
+                    -webkit-transition: all 1s ease 0s;
+                    cursor: pointer;
+
+                }
+
+                .active {
+                    background: none;
+                    border: 1px solid #ff7373;
+                    color: #ff7373;
+                    pointer-events: none;
+                }
+
+                #SignIn:hover {
+                    background: #fd4545;
+                }
+
+                .SignOut {
+                    width: 146px;
+                    height: 42px;
+                    border-radius: 24px;
+                    background: #5ccffd;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: all 1s ease 0s;
+                    -o-transition: all 1s ease 0s;
+                    -moz-transition: all 1s ease 0s;
+                    -webkit-transition: all 1s ease 0s;
+                    cursor: pointer;
+                }
+
+                .active1 {
+                    background: none;
+                    border: 1px solid #5ccffd;
+                    color: #5ccffd;
+                    pointer-events: none;
+                }
+
+                #SignOut:hover {
+                    background: #19a1d6;
+                }
+
+                .PlayBack {
+                    width: 146px;
+                    height: 42px;
+                    border-radius: 24px;
+                    background: #e68e3d;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: all 1s ease 0s;
+                    -o-transition: all 1s ease 0s;
+                    -moz-transition: all 1s ease 0s;
+                    -webkit-transition: all 1s ease 0s;
+                    cursor: pointer;
+                }
+
+                #PlayBack:hover {
+                    background: #b1631a;
+                }
+            }
+        }
+    }
+
+    .video {
+        position: absolute;
+        width: 100%;
+        height: calc(100% - 80px);
+
+        #id_test_video {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    #tips {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, .7);
+        width: 280px;
+        height: 42px;
+        border-radius: 6px;
+        color: #dfdfdf;
+        text-align: center;
+        line-height: 42px;
+        font-size: 14px;
+        display: none;
+        z-index: 100;
+    }
+}

@@ -3,7 +3,7 @@
   padding: 0;
 }
 body {
-  background: #f1f1f1;
+  background: #f8f8f8;
 }
 p {
   margin: 0;
@@ -167,7 +167,7 @@ p {
 .container-login .sign .form form .mobile .code .yzm .getcode {
   width: 200px;
   height: 36px;
-  background: #5cfd8c;
+  background: #5ccffd;
   color: #ffffff;
   display: flex;
   justify-content: center;
@@ -190,6 +190,7 @@ p {
   height: 24px;
   text-align: center;
   line-height: 24px;
+  color: #e04e34;
 }
 .container-login .sign .form form .submit {
   width: 100%;

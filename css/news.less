@@ -4,7 +4,7 @@
 }
 
 body {
-    background: #f1f1f1;
+    background: #f8f8f8;
 }
 
 p {
@@ -56,7 +56,7 @@ header {
                     font-weight: bold;
                 }
 
-                .hospital{
+                .hospital {
                     color: #949494;
                     font-size: 12px;
                 }
@@ -203,19 +203,19 @@ header {
     }
 }
 
-// screen
-.screen {
-    position: fixed;
+.news {
     width: 100%;
-    top: 64px;
-    padding-top: 32px;
-    box-sizing: border-box;
-    background: #ffffff;
-    z-index: 100;
+    padding-top: 64px;
+    min-height: 790px;
 
-    .screen-container {
+    .container-news {
         width: 1200px;
         margin: 0 auto;
+        min-height: 790px;
+        background: #ffffff;
+        padding: 20px;
+        box-sizing: border-box;
+
 
         .nav {
             margin-bottom: 12px;
@@ -232,143 +232,30 @@ header {
             }
         }
 
-        .ification {
+        .news-content {
             width: 100%;
-            border-top: 1px solid #c7c7c7;
-            border-bottom: 1px solid #c7c7c7;
-            padding: 12px 0;
-            box-sizing: border-box;
-            display: flex;
 
             .title {
-                width: 90px;
+                width: 100%;
+                font-size: 28px;
+                font-weight: bold;
+                text-align: center;
             }
 
-            .lesson_item {
-                width: 100px;
-                text-align: left;
-                cursor: pointer;
+            .author {
+                width: 100%;
+                text-align: center;
+                color: #888888;
+                margin-top: 12px;
             }
 
-            .lesson_item:hover {
-                color: #5c94fd;
-            }
-        }
-
-        .spend {
-            width: 100%;
-            padding: 12px 0;
-            box-sizing: border-box;
-            display: flex;
-
-            .title {
-                width: 90px;
-            }
-
-            .spend_item {
-                width: 100px;
-                text-align: left;
-                cursor: pointer;
-            }
-
-            .spend_item:hover {
-                color: #5c94fd;
-            }
-        }
-
-        .sort {
-            width: 100%;
-            padding: 12px 0;
-            box-sizing: border-box;
-            display: flex;
-            border-top: 1px solid #c7c7c7;
-
-            .title {
-                width: 90px;
-            }
-
-            .sort_item {
-                width: 100px;
-                text-align: left;
-                cursor: pointer;
-            }
-
-            .sort_item:hover {
-                color: #5c94fd;
-            }
-        }
-    }
-}
-
-//lesson
-.lesson {
-    min-height: 568px;
-    margin-top: 264px;
-    padding-top: 22px;
-    box-sizing: border-box;
-    z-index: -10;
-
-    .container-lesson {
-        min-height: 568px;
-        width: 1200px;
-        margin: 0 auto;
-
-        .online_list {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            .online_item {
-                width: 288px;
-                height: 274px;
-                background: #ffffff;
-
-                .pic {
-                    overflow: hidden;
-                    width: 100%;
-                    height: 150px;
-
-                    img {
-                        display: block;
-                        width: 100%;
-                        height: 150px;
-                        cursor: pointer;
-                        transition: all 0.6s;
-                    }
-                }
-
-                .message {
-                    position: relative;
-                    padding: 10px 6px;
-                    box-sizing: border-box;
-                    height: 150px;
-
-                    .title {
-                        position: relative;
-                        font-size: 14px;
-                        text-align: left;
-                        margin: 6px 0 4px 0;
-                    }
-
-                    .price {
-                        color: #888888;
-                        margin: 4px 0;
-
-                        span {
-                            color: #fd4242;
-                        }
-                    }
-
-                    .hospital {
-                        color: #ffb039;
-                    }
-                }
-            }
-
-            .online_item:hover {
-                img {
-                    transform: scale(1.2);
-                }
+            pre {
+                margin-top: 24px;
+                white-space: pre-wrap;
+                background: none;
+                border: none;
+                font-size: 16px;
+                padding: 0;
             }
         }
     }
@@ -401,9 +288,10 @@ header {
     }
 
     .bottom-footer {
+        border-top: 1px solid #cccccc;
         width: 100%;
         height: 42px;
-        background: #7c7c7c;
+        background: #333333;
 
         .bot_container {
             width: 1200px;
@@ -427,7 +315,7 @@ header {
     height: 280px;
     background: #ffffff;
     display: none;
-    z-index: 9999;
+    z-index: 10;
 
     .content_list {
         padding: 20px 0;
@@ -447,22 +335,15 @@ header {
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
-
-            a {
-                color: #000000;
-                text-decoration: none;
-                font-size: 12px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-
-                img {
-                    display: block;
-                    width: 32px;
-                    height: 32px;
-                    margin-bottom: 8px;
-                }
+            color: #000000;
+            text-decoration: none;
+            font-size: 12px;
+            cursor: pointer;
+            img {
+                display: block;
+                width: 32px;
+                height: 32px;
+                margin-bottom: 8px;
             }
         }
     }

@@ -5,7 +5,7 @@ $(function () {
     //城市枚举
     getProvinceList = function () {
         $.ajax({
-            methods: 'GET',
+            type: 'GET',
             url: BASE_URL + '/API/GetRegion',
             data: {
                 pagesize: 50,
@@ -25,7 +25,7 @@ $(function () {
     //医院枚举
     getHospitalList = function (province) {
         $.ajax({
-            methods: 'GET',
+            type: 'GET',
             url: BASE_URL + '/API/GetOrganList',
             data: {
                 pagesize: 500,
@@ -53,7 +53,7 @@ $(function () {
     //对应科室列表枚举
     getDepartmentList = function (id) {
         $.ajax({
-            methods: 'GET',
+            type: 'GET',
             url: BASE_URL + '/API/GetOrganById',
             data: {
                 id: id
@@ -73,10 +73,29 @@ $(function () {
         })
     }
 
+    //用户名判断重复
+    checkUserName = function (username) {
+        $.ajax({
+            type: 'GET',
+            url: BASE_URL + '/API/UserNameRepeat',
+            data: {
+                username
+            },
+            success: function (res) {
+                if (res.State == 0) {
+                    $('.backtips').text('');
+                } else {
+                    $('.backtips').text(res.Message);
+                }
+            }
+        })
+    }
+
+
     //手机号码判断重复
     checkPhone = function (phone) {
         $.ajax({
-            methods: 'GET',
+            type: 'GET',
             url: BASE_URL + '/API/PhoneRepeat',
             data: {
                 phone: phone
@@ -84,7 +103,9 @@ $(function () {
             success: function (res) {
                 if (res.State == 0) {
                     $('.backtips').text('');
+                    $('#getCode').removeClass('disableGet');
                 } else {
+                    $('#getCode').addClass('disableGet');
                     $('.backtips').css('color', '#e04e34');
                     $('.backtips').text(res.Message);
                 }
@@ -95,7 +116,7 @@ $(function () {
     //注册系统账号
     registerUser = function (username, password, realname, email, phone, sex, age, organId) {
         $.ajax({
-            methods: 'GET',
+            type: 'GET',
             url: BASE_URL + '/API/RegisterUser',
             data: {
                 username,
@@ -121,7 +142,7 @@ $(function () {
     //登录
     userLogin = function (username, password) {
         $.ajax({
-            methods: 'GET',
+            type: 'GET',
             url: BASE_URL + '/API/UserLogin',
             data: {
                 username,
@@ -139,11 +160,11 @@ $(function () {
                     url = "index.html";
                     window.location.href = url;
                 } else {
-                    $('.operation .tips').text(res.Message);
+                    $('.operation .tips').text(res.Message).css('color', '#e04e34');
                 }
             }
         })
     }
-
+    
 
 })

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/jquery.pagination.css">
+    <link rel="stylesheet" href="./css/video.css">
+    <title>高汕课堂</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="container-header">
+                <img src="./images/video@logo.png" alt="">
+            </div>
+        </div>
+        <div class="video">
+            <div class="video-container">
+                <div class="video_l">
+                    <!--<video id="video" controls autoplay="true"></video>-->
+					 <div id="id_test_video" style="width:100%"></div>
+                </div>
+                <div class="video_r">
+                    <div class="video_title"></div>
+                    <div class="video_list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/jquery.pagination.min.js"></script>
+    <script src="./js/lesson.js"></script>
+	
+	<script src="./js/TcPlayer-2.3.3.js"></script>
+	
+	
+    <script>
+
+        videoList = '';
+
+        $(document).ready(function () {
+
+            function GetRequest() {
+                var url = location.search;
+                var theRequest = new Object();
+                if (url.indexOf("?") != -1) {
+                    var str = url.substr(1);
+                    strs = str.split("&");
+                    for (var i = 0; i < strs.length; i++) {
+                        theRequest[strs[i].split("=")[0]] = decodeURIComponent(strs[i].split("=")[1]);
+                    }
+                }
+                return theRequest;
+            }
+            id = GetRequest().id;   //课程ID 
+            getVideoList(id);
+        })
+		var player = null;
+        getVideoData = function (data) {
+            videoList = data;
+            var m = videoList[0].viode_url;
+			
+			player = new TcPlayer('id_test_video', {
+                // "mp4":"media/Data.mp4",
+                "mp4":m,
+                //"flv": "http://qpodr.cn/live/32e67dfc74.flv", //增加了一个flv的播放地址，用于PC平台的播放 请替换成实际可用的播放地址
+                "autoplay": true,      //iOS下safari浏览器，以及大部分移动端浏览器是不开放视频自动播放这个能力的
+                //"coverpic": "http://www.test.com/myimage.jpg",
+                "progressControl":false,
+                "width": '100%',//视频的显示宽度，请尽量使用视频分辨率宽度
+                "height": '100%'//视频的显示高度，请尽量使用视频分辨率高度
+            });
+           // $('#video').attr('src', m);
+			//video(m);
+        }
+		function video(e){
+			var player = new TcPlayer('id_test_video', {
+                // "mp4":"media/Data.mp4",
+                "mp4": e,
+                //"flv": "http://qpodr.cn/live/32e67dfc74.flv", //增加了一个flv的播放地址，用于PC平台的播放 请替换成实际可用的播放地址
+                "autoplay": true,      //iOS下safari浏览器，以及大部分移动端浏览器是不开放视频自动播放这个能力的
+                //"coverpic": "http://www.test.com/myimage.jpg",
+                "progressControl":false,
+                "width": '100px',//视频的显示宽度，请尽量使用视频分辨率宽度
+                "height": '100px'//视频的显示高度，请尽量使用视频分辨率高度
+            });
+		}
+        $('.video_r').on('click', '.video_item', function (e) {
+		
+            var i = $(this).index();
+            var m = videoList[i].viode_url;
+		    player.load(m);
+		    $('.video_item').eq(i).addClass('active').siblings().removeClass('active');
+			//$('.vcp-player').eq(i).addClass('active').siblings().removeClass('active');
+			
+         //   var i = $(this).index();
+          //  var m = videoList[i].viode_url;
+           // $('#video').attr('src', m);
+           // $('.video_item').eq(i).addClass('active').siblings().removeClass('active');
+        })
+
+    </script>
+</body>
+
+</html>

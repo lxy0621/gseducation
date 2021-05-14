@@ -25,8 +25,8 @@
                 <p>学科导航</p>
             </div>
             <div class="search">
-                <input type="text" placeholder="高汕医疗课程">
-                <div class="searchBtn">
+                <input type="text" placeholder="高汕医疗课程" id="searchOfflineInput">
+                <div class="searchBtn" id="searchOffline">
                     <img src="./images/search.png" alt="">
                 </div>
             </div>
@@ -47,86 +47,44 @@
             </div>
         </div>
     </header>
-    <!-- 筛选 -->
-    <div class="screen">
-        <div class="screen-container">
-            <div class="nav">
-                <a href="#" class="goback">返回上级</a>
-                <img src="./images/next.png" />
-                <a href="#">离线课程</a>
-                <img src="./images/next.png" />
-                <a href="#">全部分类</a>
-                <img src="./images/next.png" />
-            </div>
-            <div class="ification">
-                <div class="title">分 类：</div>
-                <div class="lesson_item">全 部</div>
-                <div class="lesson_item">内 科</div>
-                <div class="lesson_item">外 科</div>
-                <div class="lesson_item">耳鼻喉科</div>
-                <div class="lesson_item">儿 科</div>
-                <div class="lesson_item">妇 科</div>
-            </div>
-            <div class="spend">
-                <div class="title">收 费：</div>
-                <div class="spend_item">全 部</div>
-                <div class="spend_item">免 费</div>
-                <div class="spend_item">付 费</div>
-            </div>
-            <div class="sort">
-                <div class="title">排 序：</div>
-                <div class="sort_item">全 部</div>
-                <div class="sort_item">人 气</div>
-                <div class="sort_item">价 格</div>
-                <div class="sort_item">开播时长</div>
-            </div>
-        </div>
-    </div>
     <!-- 课程 -->
     <div class="lesson">
-        <div class="container-lesson">
-            <div class="online_list">
-                <div class="online_item">
-                    <div class="pic">
-                        <img src="./images/online.jpg" alt="">
-                    </div>
-                    <div class="message">
-                        <p class="title">2020年全区医院感染管理质量控制年会暨医院感染管理岗位培训班</p>
-                        <p class="price">共 24 节 | <span>￥10.00 元</span></p>
-                        <p class="hospital">内蒙古医科大学附属医院/感染科</p>
+        <div class="screen">
+            <div class="screen-container">
+                <div class="nav">
+                    <a href="#" class="goback">返回上级</a>
+                    <img src="./images/next.png" />
+                    <a href="#">离线课程</a>
+                    <img src="./images/next.png" />
+                    <a href="#">全部分类</a>
+                    <img src="./images/next.png" />
+                </div>
+                <div class="ification">
+                    <div class="title">分 类：</div>
+                    <div class="ification_list" id="department">
+                        <div class="lesson_item active" id="0">全 部</div>
                     </div>
                 </div>
-                <div class="online_item">
-                    <div class="pic">
-                        <img src="./images/online.jpg" alt="">
-                    </div>
-                    <div class="message">
-                        <p class="title">2020年全区医院感染管理质量控制年会暨医院感染管理岗位培训班</p>
-                        <p class="price">共 24 节 | <span>￥10.00 元</span></p>
-                        <p class="hospital">内蒙古医科大学附属医院/感染科</p>
+                <div class="spend">
+                    <div class="title">收 费：</div>
+                    <div class="spend_list">
+                        <div class="spend_item active" id="">全 部</div>
+                        <div class="spend_item" id="0">免 费</div>
+                        <div class="spend_item" id="1">付 费</div>
                     </div>
                 </div>
-                <div class="online_item">
-                    <div class="pic">
-                        <img src="./images/online.jpg" alt="">
-                    </div>
-                    <div class="message">
-                        <p class="title">2020年全区医院感染管理质量控制年会暨医院感染管理岗位培训班</p>
-                        <p class="price">共 24 节 | <span>￥10.00 元</span></p>
-                        <p class="hospital">内蒙古医科大学附属医院/感染科</p>
-                    </div>
-                </div>
-                <div class="online_item">
-                    <div class="pic">
-                        <img src="./images/online.jpg" alt="">
-                    </div>
-                    <div class="message">
-                        <p class="title">2020年全区医院感染管理质量控制年会暨医院感染管理岗位培训班</p>
-                        <p class="price">共 24 节 | <span>￥10.00 元</span></p>
-                        <p class="hospital">内蒙古医科大学附属医院/感染科</p>
+                <div class="sort">
+                    <div class="title">排&ensp;&ensp;&ensp;&ensp;序：</div>
+                    <div class="sort_list">
+                        <div class="sort_item active" id="1">默 认</div>
+                        <div class="sort_item" id="1">正 序</div>
+                        <div class="sort_item" id="0">倒 序</div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="container-lesson">
+            <div class="online_list" id="offLineList"></div>
         </div>
     </div>
     <!-- 分页 -->
@@ -148,66 +106,148 @@
     </div>
 
     <!-- absolute -->
-    <div class="lesson_list">
+    <div class="lesson_list" id="AllLessonList">
         <div class="content_list">
-            <div class="list_item"><a href="#"><img src="./images/icon_yx.png" alt="">基础医学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_nk.png" alt="">临床内科学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_wk.png" alt="">临床外科学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_fc.png" alt="">妇产科学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_ek.png" alt="">儿科学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_yeb.png" alt="">眼耳鼻喉学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_kq.png" alt="">口腔医学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_movie.png" alt="">影像医学</a></div>
+            <div class="list_item" value="1"><img src="./images/icon_yx.png" alt="">基础医学</div>
+            <div class="list_item" value="2"><img src="./images/icon_nk.png" alt="">临床内科学</div>
+            <div class="list_item" value="3"><img src="./images/icon_wk.png" alt="">临床外科学</div>
+            <div class="list_item" value="4"><img src="./images/icon_fc.png" alt="">妇产科学</div>
+            <div class="list_item" value="5"><img src="./images/icon_ek.png" alt="">儿科学</div>
+            <div class="list_item" value="6"><img src="./images/icon_yeb.png" alt="">眼耳鼻喉学</div>
+            <div class="list_item" value="7"><img src="./images/icon_kq.png" alt="">口腔医学</div>
+            <div class="list_item" value="8"><img src="./images/icon_movie.png" alt="">影像医学</div>
 
-            <div class="list_item"><a href="#"><img src="./images/icon_jz.png" alt="">急诊学与危重症医学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_jy.png" alt="">医学检验</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_gg.png" alt="">公共卫生与预防医学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_med.png" alt="">药学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_hl.png" alt="">护理学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_jy.png" alt="">医学教育与卫生管理</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_kf.png" alt="">全科医学与康复医学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_jh.png" alt="">中医学/中西医结合医学</a></div>
+            <div class="list_item" value="9"><img src="./images/icon_jz.png" alt="">急诊学与危重症医学</div>
+            <div class="list_item" value="10"><img src="./images/icon_jy.png" alt="">医学检验</div>
+            <div class="list_item" value="11"><img src="./images/icon_gg.png" alt="">公共卫生与预防医学</div>
+            <div class="list_item" value="12"><img src="./images/icon_med.png" alt="">药学</div>
+            <div class="list_item" value="13"><img src="./images/icon_hl.png" alt="">护理学</div>
+            <div class="list_item" value="14"><img src="./images/icon_jy.png" alt="">医学教育与卫生管理</div>
+            <div class="list_item" value="15"><img src="./images/icon_kf.png" alt="">全科医学与康复医学</div>
+            <div class="list_item" value="16"><img src="./images/icon_jh.png" alt="">中医学/中西医结合医学</div>
 
-            <div class="list_item"><a href="#"><img src="./images/icon_ln.png" alt="">老年医学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_sx.png" alt="">输血医学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_lc.png" alt="">临床营养学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_zl.png" alt="">肿瘤医学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_fc.png" alt="">南方医科大学研究生课程班</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_js.png" alt="">精神科</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_ss.png" alt="">手术室</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_yd.png" alt="">运动医科学</a></div>
+            <div class="list_item" value="17"><img src="./images/icon_ln.png" alt="">老年医学</div>
+            <div class="list_item" value="18"><img src="./images/icon_sx.png" alt="">输血医学</div>
+            <div class="list_item" value="19"><img src="./images/icon_lc.png" alt="">临床营养学</div>
+            <div class="list_item" value="20"><img src="./images/icon_zl.png" alt="">肿瘤医学</div>
+            <div class="list_item" value="21"><img src="./images/icon_fc.png" alt="">南方医科大学研究生课程班</div>
+            <div class="list_item" value="22"><img src="./images/icon_js.png" alt="">精神科</div>
+            <div class="list_item" value="23"><img src="./images/icon_ss.png" alt="">手术室</div>
+            <div class="list_item" value="24"><img src="./images/icon_yd.png" alt="">运动医科学</div>
         </div>
     </div>
     <script src="./js/jquery-3.3.1.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/jquery.pagination.min.js"></script>
+    <script src="./js/lesson.js"></script>
     <script src="./js/interactive.js"></script>
     <script>
+
+        var pagesize = 8;
+        var curpageIndex = 1;
+        var subjectType = '';
+        var free = '';
+        var newsort = '1';
+        var offLineSearch = '';
+
         $(document).ready(function () {
+
+
+            //获取筛选菜单科室
+            var department = JSON.parse(sessionStorage.getItem('GSLIST'));
+            $.each(department, function (i, item) {
+                $('<div class="lesson_item" id="' + item.id + '">' + item.name + '</div>').appendTo('#department');
+            })
+
             var userInfo = localStorage.getItem('GS_EDUCATION') || '{}';
             if (userInfo !== '{}') {
                 userInfo = JSON.parse(userInfo);
                 $('.login_window .nickname').text(userInfo.realname);
                 $('.login_window .hospital').text(userInfo.hospital);
                 $('#userInfo a p').text(userInfo.realname);
-                $('#userInfo a').attr('href','personal.html');
+                $('#userInfo a').attr('href', 'personal.html');
                 $('#login').css('display', 'none');
                 $('#sign').css('display', 'none');
                 $('#out').css('display', 'block');
             } else {
                 return;
             }
+
+            function GetRequest() {
+                var url = location.search;
+                var theRequest = new Object();
+                if (url.indexOf("?") != -1) {
+                    var str = url.substr(1);
+                    strs = str.split("&");
+                    for (var i = 0; i < strs.length; i++) {
+                        theRequest[strs[i].split("=")[0]] = decodeURIComponent(strs[i].split("=")[1]);
+                    }
+                }
+                return theRequest;
+            }
+            var list = GetRequest().list;
+            var search = GetRequest().search;
+            if (list) {
+                $('.lesson_item').eq(list).addClass('active').siblings().removeClass('active');
+                getOffLineLesson(pagesize, curpageIndex, '0', '', '0', list, free, '', newsort,offLineSearch);
+            }else if(!list && search){
+                getOffLineLesson(pagesize, curpageIndex, '0', '', '0', subjectType, free, '', newsort,search);
+            }else if(list && !search){
+                getOffLineLesson(pagesize, curpageIndex, '0', '', '0', list, free, '', newsort,search);
+            }else if(list && search){
+                getOffLineLesson(pagesize, curpageIndex, '0', '', '0', list, free, '', newsort,search);
+            }else {
+                getOffLineLesson(pagesize, curpageIndex, '0', '', '0', subjectType, free, '', newsort,offLineSearch);
+            }
+
+            // if(search){
+            //     getOffLineLesson(pagesize, curpageIndex, '0', '', '0', subjectType, free, '', newsort,search);
+            // }else{
+            //     getOffLineLesson(pagesize, curpageIndex, '0', '', '0', subjectType, free, '', newsort,offLineSearch);
+            // }
+
         })
-        function showPage() {
+        showPage = function (c, t) {
             $('#pagination').pagination({
-                currentPage: 1,
-                totalPage: 5,
+                currentPage: c,
+                totalPage: t,
                 callback: function (current) {
-                    curpageIndex = current;
+                    curpageindex = current;
+                    getOffLineLesson(pagesize, curpageindex, '0', '', '0', subjectType, free, '', newsort,offLineSearch);
+
                 }
             })
         };
         showPage();
+
+        $('.ification_list').on('click', '.lesson_item', function (e) {
+            var i = $(this).index();
+            $('.lesson_item').eq(i).addClass('active').siblings().removeClass('active');
+
+            var judgeType = e.currentTarget.id;
+            if (judgeType == 0) {
+                subjectType = '';
+            } else {
+                subjectType = judgeType;
+            }
+
+            getOffLineLesson(pagesize, curpageIndex, '0', '', '0', subjectType, free, '', newsort,offLineSearch);
+
+        })
+
+        $('.spend_list').on('click', '.spend_item', function (e) {
+            var i = $(this).index();
+            $('.spend_item').eq(i).addClass('active').siblings().removeClass('active');
+            free = e.currentTarget.id;
+            getOffLineLesson(pagesize, curpageIndex, '0', '', '0', subjectType, free, '', newsort,offLineSearch);
+        })
+
+        $('.sort_list').on('click', '.sort_item', function (e) {
+            var i = $(this).index();
+            $('.sort_item').eq(i).addClass('active').siblings().removeClass('active');
+            neworder = e.currentTarget.id;
+            getOffLineLesson(pagesize, curpageIndex, '0', '', '0', subjectType, free, '', newsort,offLineSearch);
+        })
 
         $('.goback').click(function () {
             history.go(-1)

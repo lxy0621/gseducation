@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/live.css">
+    <link rel="stylesheet" href="./css/iconfont.css">
+    <title>高汕课堂</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="container-header">
+                <img src="./images/video@logo.png" alt="">
+                <div class="operation">
+                    <div id="SignIn" class="SignIn active iconfont icon-iPhone82">&nbsp;直播签到</div>
+                    <div id="SignOut" class="SignOut iconfont icon-qiantui">&nbsp;直播签退</div>
+                    <div id="PlayBack" class="PlayBack iconfont icon-huifang">&nbsp;直播回放</div>
+                </div>
+            </div>
+        </div>
+        <div class="video">
+            <!--   <video id="video" src="" type="application/x-mpegURL" controls webkit-playsinline playsinline
+                x-webkit-airplay="allow" preload="auto" autoplay="true"></video>-->
+            <div id="id_test_video"></div>
+        </div>
+
+        <div id="tips"></div>
+    </div>
+</body>
+
+
+
+<script src="./js/jquery-3.3.1.min.js"></script>
+<script src="./js/lesson.js"></script>
+<script src="./js/TcPlayer-2.3.3.js"></script>
+<script>
+
+    var ID = '';
+    var Userid = '';
+
+    $(document).ready(function () {
+
+        function GetRequest() {
+            var url = location.search;
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for (var i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split("=")[0]] = decodeURIComponent(strs[i].split("=")[1]);
+                }
+            }
+            return theRequest;
+        }
+
+        ID = GetRequest().id;   //课程ID 
+        getLiveList(ID, Userid);    //获取当前直播信息数据
+        
+        var userInfo = localStorage.getItem('GS_EDUCATION') || '{}';
+        var uid = localStorage.getItem('GS_EDUCATION') || '';
+        if (uid != '') {
+            Userid = JSON.parse(uid).id;
+        }
+        var player = new TcPlayer('id_test_video', {
+            // "mp4":"media/Data.mp4",
+            "m3u8": "http://qpodr.cn/live/32e67dfc74.m3u8",
+            //"flv": "http://qpodr.cn/live/32e67dfc74.flv", //增加了一个flv的播放地址，用于PC平台的播放 请替换成实际可用的播放地址
+            "autoplay": true,      //iOS下safari浏览器，以及大部分移动端浏览器是不开放视频自动播放这个能力的
+            //"coverpic": "http://www.test.com/myimage.jpg",
+            "progressControl": false,
+            "width": '100%',//视频的显示宽度，请尽量使用视频分辨率宽度
+            "height": '100%'//视频的显示高度，请尽量使用视频分辨率高度
+        });
+
+    })
+
+    //签到
+    $('#SignIn').click(function () {
+
+        var userinfo = localStorage.getItem('GS_EDUCATION') || '{}';
+        var username = JSON.parse(userinfo).realname;
+        var ProjectID = ID;                                 //课程ID
+        var Userid = JSON.parse(userinfo).id;               //用户id
+        var pro_type = 0;                                   //签到类型
+        toSign(ProjectID, Userid, pro_type);
+        getLiveList(ID, Userid);
+
+    })
+    //签退
+    $('#SignOut').click(function () {
+
+        var userinfo = localStorage.getItem('GS_EDUCATION') || '{}';
+        var username = JSON.parse(userinfo).realname;
+        var ProjectID = ID;                                 //课程ID
+        var Userid = JSON.parse(userinfo).id;               //用户id
+        var pro_type = 1;                                   //签到类型
+        toSign(ProjectID, Userid, pro_type);
+        getLiveList(ID, Userid);
+
+    })
+    $('#PlayBack').click(function () {
+
+        url = "video.html?id=" + ID;
+        var tempwindow = window.open('_blank');
+        tempwindow.location.href = url;
+
+    })
+
+</script>
+
+</html>

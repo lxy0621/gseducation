@@ -8,174 +8,512 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./css/iconfont.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-datetimepicker.css">
     <link rel="stylesheet" href="./css/jquery.pagination.css">
     <link rel="stylesheet" href="./css/personal.css">
     <title>高汕课堂</title>
 </head>
 
 <body>
-    <header>
-        <div class="container_header">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="./images/logo.png" alt="">
-                </a>
-            </div>
-            <div class="list">
-                <img src="./images/list.png" alt="">
-                <p>学科导航</p>
-            </div>
-            <div class="search">
-                <input type="text" placeholder="高汕医疗课程">
-                <div class="searchBtn">
-                    <img src="./images/search.png" alt="">
+    <div class="container">
+        <header>
+            <div class="container_header">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="./images/logo.png" alt="">
+                    </a>
+                </div>
+                <div class="list">
+                    <img src="./images/list.png" alt="">
+                    <p>学科导航</p>
+                </div>
+                <div class="search">
+                    <input type="text" placeholder="高汕医疗课程" id="searchOfflineInput">
+                    <div class="searchBtn" id="searchOffline">
+                        <img src="./images/search.png" alt="">
+                    </div>
+                </div>
+                <div class="login" id="userInfo">
+                    <a href="">
+                        <p>未登录</p>
+                    </a>
+                </div>
+                <div class="login_window">
+                    <div class="avatar" id="avatarLogin">
+                        <p class="nickname">游客</p>
+                        <p class="hospital"> -- </p>
+                    </div>
+                    <div class="login_btn" id="login">登 录</div>
+                    <div class="sign_btn" id="sign">注 册</div>
+                    <div class="out_btn" id="out_">退 出</div>
+                    <div class="triangle"></div>
                 </div>
             </div>
-            <div class="login" id="userInfo">
-                <a href="">
-                    <p>未登录</p>
-                </a>
-            </div>
-            <div class="login_window">
-                <div class="avatar" id="avatarLogin">
-                    <p class="nickname">游客</p>
-                    <p class="hospital"> -- </p>
+        </header>
+        <div class="personal">
+            <div class="container-personal">
+                <div class="information">
+                    <div class="info_r"></div>
                 </div>
-                <div class="login_btn" id="login">登 录</div>
-                <div class="sign_btn" id="sign">注 册</div>
-                <div class="out_btn" id="out_">退 出</div>
-                <div class="triangle"></div>
+                <div class="function_center">
+                    <div class="function_list">
+                        <div class="list_item active">
+                            <p class="iconfont icon-kecheng1-copy"></p>课题申报
+                        </div>
+                        <div class="list_item">
+                            <p class="iconfont icon-kecheng1-copy"></p>课题申报列表
+                        </div>
+                        <div class="list_item">
+                            <p class="iconfont icon-kecheng"></p>我的课程列表
+                        </div>
+                        <div class="list_item">
+                            <p class="iconfont icon-gerenxinxi"></p>个人信息
+                        </div>
+                        <div class="list_item">
+                            <p class="iconfont icon-zizhi"></p>教师资质认证
+                        </div>
+                        <div class="list_item">
+                            <p class="iconfont icon-tuichu"></p>注销登录
+                        </div>
+                    </div>
+                    <div class="function_content">
+                        <div class="content_item declare">
+                            <div class="declare_tabs">
+                                <div class="dtabs_item active">听课申报</div>
+                                <div class="dtabs_item">讲课申报</div>
+                            </div>
+                            <div class="declare_contents">
+                                <div class="dcontent_item">
+                                    <div class="vice_declare_form">
+                                        <div class="form_item">
+                                            <div class="form_title"><span></span>申报类型：</div>
+                                            <div class="issueName" value="1">听课申报</div>
+                                        </div>
+                                        <div class="form_item">
+                                            <div class="form_title"><span>*</span>课程类型：</div>
+                                            <select name="VlessonType" id="VlessonType">
+                                                <option value="0">在线课程</option>
+                                                <option value="1">离线课程</option>
+                                            </select>
+                                        </div>
+                                        <div class="form_item">
+                                            <div class="form_title"><span>*</span>学科类型：</div>
+                                            <select name="VsubjectType" id="VsubjectType"></select>
+                                        </div>
+                                        <div class="form_item">
+                                            <div class="form_title"><span></span>申报详情：</div>
+                                            <textarea name="Remarks" id="Vremarks" placeholder="请输入申报详情"></textarea>
+                                        </div>
+                                        <div class="vdeclare_button">
+                                            <div class="vdeclare_submit">听课申报</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dcontent_item">
+                                    <div class="declare_form">
+                                        <div class="form_item">
+                                            <div class="form_title"><span></span>申报类型：</div>
+                                            <div class="issueName" value="1">讲课申报</div>
+                                        </div>
+                                        <div class="form_item">
+                                            <div class="form_title"><span>*</span>课程类型：</div>
+                                            <select name="lessonType" id="lessonType">
+                                                <option value="0">在线课程</option>
+                                                <option value="1">离线课程</option>
+                                            </select>
+                                        </div>
+                                        <div class="form_item">
+                                            <div class="form_title"><span>*</span>收费类型：</div>
+                                            <select name="freeType" id="freeType">
+                                                <option value="0">免费课程</option>
+                                                <option value="1">收费课程</option>
+                                            </select>
+                                        </div>
+                                        <div class="form_item">
+                                            <div class="form_title"><span>*</span>所属地区：</div>
+                                            <select name="positionType" id="positionType">
+                                                <option value="0">区内</option>
+                                                <option value="1">区外</option>
+                                            </select>
+                                        </div>
+                                        <div class="form_item">
+                                            <div class="form_title"><span>*</span>选择医生：</div>
+                                            <input class="doctor" name="doctor" placeholder="选择授课医师">
+                                        </div>
+                                        <div class="form_item">
+                                            <div class="form_title"><span>*</span>授课起始时间：</div>
+                                            <div class="time-control">
+                                                <input type="text" id="startdate" name="datetimepicker" value=" "
+                                                    placeholder="查询年月" class="form-control" style="width: 100%;">
+                                            </div>
+                                        </div>
+                                        <div class="form_item">
+                                            <div class="form_title"><span>*</span>授课结束时间：</div>
+                                            <div class="time-control">
+                                                <input type="text" id="enddate" name="datetimepicker" value=" "
+                                                    placeholder="查询年月" class="form-control" style="width: 100%;">
+                                            </div>
+                                        </div>
+                                        <div class="form_item">
+                                            <div class="form_title"><span></span>备&ensp;&ensp;&ensp;&ensp;注：</div>
+                                            <textarea name="Remarks" id="Remarks" placeholder="请输入备注内容"></textarea>
+                                        </div>
+                                        <div class="declare_button">
+                                            <div class="declare_submit">讲课申报</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content_item declare_list">
+                            <div class="dlist_search">
+                                <select name="dec_Type" id="dlistsel1">
+                                    <option value="">请选择申报类型</option>
+                                    <option value="0">听课申报</option>
+                                    <option value="1">讲课申报</option>
+                                </select>
+                                <select name="dec_Type" id="dlistsel2">
+                                    <option value="">请选择课程类型</option>
+                                    <option value="0">离线课程</option>
+                                    <option value="1">在线课程</option>
+                                </select>
+                                <select name="dec_Type" id="dlistsel3">
+                                    <option value="">请选择收费情况</option>
+                                    <option value="0">免费</option>
+                                    <option value="1">收费</option>
+                                </select>
+                                <select name="dec_Type" id="dlistsel4">
+                                    <option value="">请选择申报地区</option>
+                                    <option value="0">区内</option>
+                                    <option value="1">区外</option>
+                                </select>
+                                <div class="dec_search" id="decSearch">筛选</div>
+                                <div class="dec_reset" id="decReset">重置</div>
+                            </div>
+                            <div class="dlist_list">
+                                <div class="scroll">
+                                    <ul id="myDeclareList">
+                                        <li class="thead">
+                                            <div style="width: 150px;">申报类型</div>
+                                            <div style="width: 150px;">课程类型</div>
+                                            <div style="width: 220px;">医疗机构</div>
+                                            <div style="width: 150px;">医师姓名</div>
+                                            <div style="width: 150px;">收费情况</div>
+                                            <div style="width: 150px;">申报地区</div>
+                                            <div style="width: 200px;">申报时间</div>
+                                            <div style="width: 270px;">备注</div>
+                                        </li>
+                                        <div class="tbody"></div>
+                                    </ul>
+                                </div>
+                                <!-- 分页 -->
+                                <div class="page">
+                                    <div class="container-page">
+                                        <div class="panel-footer text-center">
+                                            <div id="Dpagination" class="page"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content_item mylesson">
+                            <div class="scroll">
+                                <ul id="myLessonList">
+                                    <li class="thead">
+                                        <div style="width: 180px;">操作</div>
+                                        <div style="width: 210px;">课程编号</div>
+                                        <div style="width: 160px;">签到状态</div>
+                                        <div style="width: 160px;">课程名称</div>
+                                        <div style="width: 210px;" class="time">
+                                            开课时间
+                                            <div>
+                                                <div class="time_t"></div>
+                                                <div class="time_b active_b"></div>
+                                            </div>
+                                        </div>
+                                        <div style="width: 120px;">课程类型</div>
+                                        <div style="width: 116px;">授课人</div>
+                                    </li>
+                                    <div class="tbody"></div>
+                                </ul>
+                            </div>
+                            <!-- 分页 -->
+                            <div class="page">
+                                <div class="container-page">
+                                    <div class="panel-footer text-center">
+                                        <div id="pagination" class="page"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content_item userInfo">
+                            <div class="userInfo_form">
+                                <div class="uform_item">
+                                    <div class="item_title">账号名称：</div>
+                                    <input type="text" name="changeNumber">
+                                </div>
+                                <div class="uform_item">
+                                    <div class="item_title">邮&ensp;&ensp;&ensp;&ensp;箱：</div>
+                                    <input type="text" name="changeEmail">
+                                </div>
+                                <div class="uform_item">
+                                    <div class="item_title">手机号码：</div>
+                                    <input type="text" name="changePhone">
+                                </div>
+                                <div class="uform_item">
+                                    <div class="item_title">性&ensp;&ensp;&ensp;&ensp;别：</div>
+                                    <select name="changeGender" id="changeGender">
+                                        <option value="男">男</option>
+                                        <option value="女">女</option>
+                                    </select>
+                                </div>
+                                <div class="uform_item">
+                                    <div class="item_title">年&ensp;&ensp;&ensp;&ensp;龄：</div>
+                                    <input type="text" name="changeAge">
+                                </div>
+                                <div class="uform_item">
+                                    <div class="item_title">所属科室：</div>
+                                    <input type="text" name="changeOrgan">
+                                </div>
+                                <div class="userInfoChange">确认修改</div>
+                                <div class="userInfoChangeTips"></div>
+                            </div>
+                        </div>
+                        <div class="content_item verification">
+                            <div class="judgeVer">
+                                <div class="judgeResult">审核结果：<span>--</span></div>
+                                <div class="resultReason"></div>
+                                <div class="reVerification">重新上传</div>
+                            </div>
+                            <div class="toVerification">
+                                <div class="remark">注：上传成功后由工作人员在1~7日内进行人工审核。如有其他疑问请及时联系服务人员。</div>
+                                <div class="ver_form">
+                                    <div class="ver_item">
+                                        <p><span>*</span>身&ensp;份&ensp;证&ensp;号&ensp;：</p>
+                                        <input type="text" name="idcard" class="idcard">
+                                    </div>
+                                    <div class="ver_item doc_send">
+                                        <p><span>*</span>资质文件上传：</p>
+                                        <div class="file_send">
+                                            <div class="file_send_t">
+                                                <div class="fileInput">
+                                                    <input type="file" id="uploadFile">
+                                                </div>
+                                                <div class="fileMessage">
+                                                    <div class="tips">注：上传文件仅支持压缩包（zip/rar/7z），且文件大小不得超过20M。</div>
+                                                    <div class="line1" id="progressName">文件名：<span
+                                                            class="proname">--</span>
+                                                    </div>
+                                                    <div class="icon">上传进度：<span id="progressPercent">0%</span></div>
+                                                </div>
+                                                <div class="fileBtn">
+                                                    <div class="backtips" id="progressText"></div>
+                                                    <div class="to_upload prohibit" id="progressBtn">立即上传</div>
+                                                </div>
+                                            </div>
+                                            <div class="file_send_b">
+                                                <div id="uploadLine"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ver_item">
+                                        <p><span></span>上&ensp;传&ensp;备&ensp;注&ensp;：</p>
+                                        <textarea name="remark" id="remark" placeholder="请输入备注信息(100字以内)"
+                                            maxlength="100"></textarea>
+                                    </div>
+                                    <div class="bottomBtn">
+                                        <div class="vertips"></div>
+                                        <div id="verSubmit" class="submit">提交</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content_item signout">
+                            <p>确定要注销登录吗？</p>
+                            <div class="_btn">
+                                <div class="logout" id="perLogOut">注销</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </header>
+        <div id="tips"></div>
+        <div class="footer">
+            <div class="top-footer">
+                <div class="top_container"><a href="#">关于我们</a> | <a href="#">郑重声明</a> | <a href="#">帮助中心</a> | 联系电话：
+                    0471-3485147 (9:00-18:00) | 邮箱：nmyczx@163.com | 内蒙古高汕医疗科技有限公司</div>
+            </div>
+            <div class="bottom-footer">
+                <div class="bot_container">蒙ICP备19001922号 Copyright ,All Rights Reserved. HTML</div>
+            </div>
+        </div>
+        <!-- 弹出框 -->
+        <div class="lesson_list" id="AllLessonList">
+            <div class="content_list">
+                <div class="list_item" value="1"><img src="./images/icon_yx.png" alt="">基础医学</div>
+                <div class="list_item" value="2"><img src="./images/icon_nk.png" alt="">临床内科学</div>
+                <div class="list_item" value="3"><img src="./images/icon_wk.png" alt="">临床外科学</div>
+                <div class="list_item" value="4"><img src="./images/icon_fc.png" alt="">妇产科学</div>
+                <div class="list_item" value="5"><img src="./images/icon_ek.png" alt="">儿科学</div>
+                <div class="list_item" value="6"><img src="./images/icon_yeb.png" alt="">眼耳鼻喉学</div>
+                <div class="list_item" value="7"><img src="./images/icon_kq.png" alt="">口腔医学</div>
+                <div class="list_item" value="8"><img src="./images/icon_movie.png" alt="">影像医学</div>
 
-    <div class="personal">
-        <div class="container-personal">
-            <div class="top-message">
-                <div class="top-left">
-                    <div class="avatar">
-                        <img src="./images/avatar.png" alt="">
+                <div class="list_item" value="9"><img src="./images/icon_jz.png" alt="">急诊学与危重症医学</div>
+                <div class="list_item" value="10"><img src="./images/icon_jy.png" alt="">医学检验</div>
+                <div class="list_item" value="11"><img src="./images/icon_gg.png" alt="">公共卫生与预防医学</div>
+                <div class="list_item" value="12"><img src="./images/icon_med.png" alt="">药学</div>
+                <div class="list_item" value="13"><img src="./images/icon_hl.png" alt="">护理学</div>
+                <div class="list_item" value="14"><img src="./images/icon_jy.png" alt="">医学教育与卫生管理</div>
+                <div class="list_item" value="15"><img src="./images/icon_kf.png" alt="">全科医学与康复医学</div>
+                <div class="list_item" value="16"><img src="./images/icon_jh.png" alt="">中医学/中西医结合医学</div>
+
+                <div class="list_item" value="17"><img src="./images/icon_ln.png" alt="">老年医学</div>
+                <div class="list_item" value="18"><img src="./images/icon_sx.png" alt="">输血医学</div>
+                <div class="list_item" value="19"><img src="./images/icon_lc.png" alt="">临床营养学</div>
+                <div class="list_item" value="20"><img src="./images/icon_zl.png" alt="">肿瘤医学</div>
+                <div class="list_item" value="21"><img src="./images/icon_fc.png" alt="">南方医科大学研究生课程班</div>
+                <div class="list_item" value="22"><img src="./images/icon_js.png" alt="">精神科</div>
+                <div class="list_item" value="23"><img src="./images/icon_ss.png" alt="">手术室</div>
+                <div class="list_item" value="24"><img src="./images/icon_yd.png" alt="">运动医科学</div>
+            </div>
+        </div>
+        <!-- 抽屉1 -->
+        <div class="comment_region">
+            <div class="cover"></div>
+            <div class="rightComment">
+                <div class="title">课程评价</div>
+                <div class="lessonName line1"></div>
+                <div class="lessonNumber"></div>
+                <div class="lessonTeacher"></div>
+                <div class="toComment">
+                    <p>发布评论：</p>
+                    <textarea id="commentInput" maxlength="100" placeholder="发表您对课程的评论(100字以内)"></textarea>
+                    <p>课程打分：</p>
+                    <div class="lesson_level">
+                        <div class="level_item one" value="1"></div>
+                        <div class="level_item two" value="2"></div>
+                        <div class="level_item three" value="3"></div>
+                        <div class="level_item four" value="4"></div>
+                        <div class="level_item five" value="5"></div>
                     </div>
-                    <div class="user">
-                        <div class="username">游客</div>
-                        <div class="usernumber">lxy_0621</div>
-                    </div>
+                    <div class="submit" id="comSubmit">提交评论</div>
                 </div>
-                <div class="top-right">
-                    <div class="title">我的账户：</div>
-                    <div class="right_item">
-                        <div class="item_name">账户余额</div>
-                        <div class="item_data"><span class="money">100</span>元</div>
-                    </div>
-                    <div class="right_item">
-                        <div class="item_name">已获得学分</div>
-                        <div class="item_data"><span class="credit">100</span>元</div>
-                    </div>
-                    <div class="right_item">
-                        <div class="item_name">待付课程</div>
-                        <div class="item_data"><span class="subject">3</span>门</div>
+                <div class="dash_line"></div>
+                <div class="ctitle">全部评论:<span></span></div>
+                <div id="allComment"></div>
+                <div class="page">
+                    <div class="container-page">
+                        <div class="panel-footer text-center">
+                            <div id="ppagination" class="page"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="bottom_message">
-                <div class="bottom-left">
-                    <div class="list_item active">
-                        <p class="iconfont icon-kecheng1-copy"></p>课程安排
+        </div>
+        <!-- 抽屉2 -->
+        <div class="sign_region">
+            <div class="cover"></div>
+            <div class="rightSign">
+                <div class="title">上传签到</div>
+                <div class="lessonName line1"></div>
+                <div class="lessonNumber"></div>
+                <div class="lessonTeacher"></div>
+                <div class="signPicture">
+                    <div class="tips">注：上传签到图片大小为1M以内，且图片格式仅支持jpg、png、jpeg、gif</div>
+                    <div class="signFileInput">
+                        <img class="getPic" src="" />
+                        <input type="file" id="signFileUpload">
                     </div>
-                    <div class="list_item">
-                        <p class="iconfont icon-kecheng"></p>我的课程
-                    </div>
-                    <div class="list_item">
-                        <p class="iconfont icon-gerenxinxi"></p>个人信息
-                    </div>
-                    <div class="list_item">
-                        <p class="iconfont icon-zizhi"></p>教师资质认证
-                    </div>
-                    <div class="list_item">
-                        <p class="iconfont icon-xiaoxi"></p>消息
-                    </div>
-                    <div class="list_item">
-                        <p class="iconfont icon-tuichu"></p>注销登录
-                    </div>
+                    <div id="uploadTips"></div>
+                    <div id="picUploadFile" class="prohibit">立即上传</div>
+                    <div id="picUploadLine"></div>
                 </div>
-                <div class="bottom-right">
-                    <div class="contrast">课程安排</div>
-                    <div class="contrast">我的课程</div>
-                    <div class="contrast">个人信息</div>
-                    <div class="contrast">教师资质认证</div>
-                    <div class="contrast">消息</div>
-                    <div class="contrast">注销登录</div>
+                <div class="picSignSubmit">确认提交</div>
+                <div id="picSubmitTips"></div>
+                <div class="wxtips">
+                    <p>上传流程：选择图片后点击“立即上传”，之后点击“确认提交”。</p>
+                    <br />
+                    <p>温馨提示：每个账号每门课程只识别一张签到表，若多次上传则默认最近时间上传的一张为有效签到表。</p>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="footer">
-        <div class="top-footer">
-            <div class="top_container"><a href="#">关于我们</a> | <a href="#">郑重声明</a> | <a href="#">帮助中心</a> | 联系电话：
-                0471-3485147 (9:00-18:00) | 邮箱：nmyczx@163.com | 内蒙古高汕医疗科技有限公司</div>
+        <!-- 选择医生 -->
+        <div class="select_doctor">
+            <div class="cover"></div>
+            <div class="doctorContent">
+                <div class="select_header">
+                    <div class="left"></div>
+                    <div class="select_title">课题申报-选择医师</div>
+                    <img class="toclose" src="./images/close.png" alt="">
+                </div>
+                <div class="select_content">
+                    <div class="select_province">
+                        <select name="" id="selectProvince">
+                            <option id="0">请选择所在省份</option>
+                        </select>
+                    </div>
+                    <div class="select_hospital">
+                        <div class="shospital_search">
+                            <input type="text" placeholder="搜索 省/市 医院名称或地址" id="HospitalSearchInput">
+                            <img src="./images/search2.png" alt="">
+                        </div>
+                        <select name="" id="selectHospital"></select>
+                    </div>
+                    <div class="select_Doctor">
+                        <div class="sDoctor_title">
+                            <div>请选择医生</div>
+                            <div>
+                                <input type="text" placeholder="搜索医生" id="sDoctorSearch" disabled>
+                            </div>
+                        </div>
+                        <div class="sDoctor_content"></div>
+                        <div class="slefSetDoctor">
+                            <div class="setDoctor_left">
+                                自定义申请医师姓名：
+                            </div>
+                            <div class="setDoctor_right">
+                                <input type="text" name="manualName" placeholder="请输入医生姓名">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="select_footer">
+                    <div class="select_confirm">确认选择</div>
+                </div>
+                <div class="select_tips"></div>
+            </div>
         </div>
-        <div class="bottom-footer">
-            <div class="bot_container">蒙ICP备19001922号 Copyright ,All Rights Reserved. HTML</div>
-        </div>
-    </div>
-    <!-- absolute -->
-    <div class="lesson_list">
-        <div class="content_list">
-            <div class="list_item"><a href="#"><img src="./images/icon_yx.png" alt="">基础医学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_nk.png" alt="">临床内科学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_wk.png" alt="">临床外科学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_fc.png" alt="">妇产科学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_ek.png" alt="">儿科学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_yeb.png" alt="">眼耳鼻喉学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_kq.png" alt="">口腔医学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_movie.png" alt="">影像医学</a></div>
-
-            <div class="list_item"><a href="#"><img src="./images/icon_jz.png" alt="">急诊学与危重症医学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_jy.png" alt="">医学检验</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_gg.png" alt="">公共卫生与预防医学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_med.png" alt="">药学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_hl.png" alt="">护理学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_jy.png" alt="">医学教育与卫生管理</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_kf.png" alt="">全科医学与康复医学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_jh.png" alt="">中医学/中西医结合医学</a></div>
-
-            <div class="list_item"><a href="#"><img src="./images/icon_ln.png" alt="">老年医学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_sx.png" alt="">输血医学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_lc.png" alt="">临床营养学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_zl.png" alt="">肿瘤医学</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_fc.png" alt="">南方医科大学研究生课程班</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_js.png" alt="">精神科</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_ss.png" alt="">手术室</a></div>
-            <div class="list_item"><a href="#"><img src="./images/icon_yd.png" alt="">运动医科学</a></div>
+        <!-- 修改个人信息 -->
+        <div class="changeUserInfo">
+            <div class="cover"></div>
+            <div class="changeInfoContent">
+                <div class="changeClose">
+                    <img src="./images/close1.png" alt="">
+                </div>
+                <select name="province" id="changeProvince">
+                    <option value="0">请选择所在省份</option>
+                </select>
+                <select name="hospital" id="changeHospital" disabled>
+                    <option value="0">请选择所属医院</option>
+                </select>
+                <select name="department" id="changeDepartment" disabled>
+                    <option value="0">请选择所属科室</option>
+                </select>
+                <div class="organSubmit">确认选择</div>
+                <div class="submitTips"></div>
+            </div>
         </div>
     </div>
     <script src="./js/jquery-3.3.1.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/bootstrap-datetimepicker.js"></script>
+    <script src="./js/bootstrap-datetimepicker.zh-CN.js"></script>
     <script src="./js/jquery.pagination.min.js"></script>
+    <script src="./js/user.js"></script>
     <script src="./js/interactive.js"></script>
-    <script>
-        $(document).ready(function () {
-            var userInfo = localStorage.getItem('GS_EDUCATION') || '{}';
-            if (userInfo !== '{}') {
-                userInfo = JSON.parse(userInfo);
-                $('.login_window .nickname').text(userInfo.realname);
-                $('.login_window .hospital').text(userInfo.hospital);
-                $('#userInfo a p').text(userInfo.realname);
-                $('#userInfo a').attr('href','personal.html');
-                $('#login').css('display', 'none');
-                $('#sign').css('display', 'none');
-                $('#out_').css('display', 'block');
-            } else {
-                return;
-            }
-        })
-        $('.bottom-left .list_item').click(function () {
-            var i = $(this).index();
-            $('.bottom-left .list_item').eq(i).addClass('active').siblings().removeClass('active');
-            $('.bottom-right .contrast').eq(i).stop().fadeIn(500).show().siblings().hide();
-        })
-    </script>
+    <script src="./js/personal.js"></script>
 </body>
 
 </html>
