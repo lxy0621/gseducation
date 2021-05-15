@@ -136,16 +136,47 @@ getProvinceData = function (data) {
 }
 
 $('input[name=changeNumber]').blur(function () {
-    changeInfo.RealName = $(this).val();
+    if($(this).val().length == 0){
+        $('.userInfoChangeTips').text('请输入正确的用户名称').css('color','#e04e34');
+        $(this).css('border','1px solid #e04e34');
+    }else{
+        changeInfo.RealName = $(this).val();
+        $('.userInfoChangeTips').text('');
+        $(this).css('border','1px solid #cccccc');
+    }
 });
 $('input[name=changeEmail]').blur(function () {
-    changeInfo.Email = $(this).val();
+    var pattern = /^([a-zA-Z0-9]+[_|_|\-|.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|_|.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+    if(!pattern.test($(this).val())){
+        $('.userInfoChangeTips').text('请输入正确的用户邮箱').css('color','#e04e34');
+        $(this).css('border','1px solid #e04e34');
+    }else{
+        changeInfo.Email = $(this).val();
+        $('.userInfoChangeTips').text('');
+        $(this).css('border','1px solid #cccccc');
+    }
 });
 $('input[name=changePhone]').blur(function () {
-    changeInfo.phone = $(this).val();
+    var pattern = /^(13[0-9]|14[01456879]|15[0-35-9]|16[2567]|17[0-8]|18[0-9]|19[0-35-9])\d{8}$/;
+    if(!pattern.test($(this).val())){
+        $('.userInfoChangeTips').text('请输入正确的手机号码').css('color','#e04e34');
+        $(this).css('border','1px solid #e04e34');
+    }else{
+        changeInfo.phone = $(this).val();
+        $('.userInfoChangeTips').text('');
+        $(this).css('border','1px solid #cccccc');
+    }
 });
 $('input[name=changeAge]').blur(function () {
-    changeInfo.Age = $(this).val();
+    var pattern = /^(?:[1-9][0-9]?|1[01][0-9]|120)$/;
+    if(!pattern.test($(this).val())){
+        $('.userInfoChangeTips').text('请输入正确的年龄').css('color','#e04e34');
+        $(this).css('border','1px solid #e04e34');
+    }else{
+        changeInfo.Age = $(this).val();
+        $('.userInfoChangeTips').text('');
+        $(this).css('border','1px solid #cccccc');
+    }
 });
 $('#changeGender').change(function () {
     changeInfo.Sex = $(this).val();
@@ -196,10 +227,14 @@ $('.changeInfoContent .organSubmit').click(function () {
     } else {
         $('.changeInfoContent .submitTips').text('请完善科室信息');
     }
-    // console.log(hospital, organ, changeOrgan)
 })
 $('.userInfo_form .userInfoChange').click(function () {
-    changeUserInfo(changeInfo)
+    console.log(changeInfo)
+    if(changeInfo.RealName.length == 0 || changeInfo.Email.length == 0 || changeInfo.phone.length == 0 || changeInfo.phone.length == 0 || changeInfo.OrganId.length == 0){ 
+        $('.userInfoChangeTips').text('请完善提交信息').css('color','#e04e34');
+    }else{
+        changeUserInfo(changeInfo)
+    }
 })
 checkChangeState = function () {
     getUserInfo(userid);
@@ -372,7 +407,7 @@ $('.declare_submit').click(function () {
     var S_TeachTime = $('#startdate').val();
     var E_TeachTime = $('#enddate').val();
     var RegionType = $('#positionType').val();
-    console.log(OrgansID, PersonID, PersonName, Type, S_TeachTime, E_TeachTime, Remarks, FreeType, VideoType, RegionType, userid)
+    // console.log(OrgansID, PersonID, PersonName, Type, S_TeachTime, E_TeachTime, Remarks, FreeType, VideoType, RegionType, userid)
     setIssue(OrgansID, PersonID, PersonName, Type, S_TeachTime, E_TeachTime, Remarks, FreeType, VideoType, RegionType, userid)
 })
 // 课程申报End
